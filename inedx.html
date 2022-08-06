@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Baby'sなら知っている曲達のタイトルでビンゴを作りました"
+    />
+    <title>Baby's Bingo</title>
+    <meta property="og:url" content="https://levure-s.github.io/Bingo/" />
+    <meta property="og:title" content="Baby's Bingo" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:description"
+      content="Baby'sなら知っている曲達のタイトルでビンゴを作りました"
+    />
+    <meta
+      property="og:image"
+      content="https://levure-s.github.io/Bingo/image.png/"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@8J6pxh2o0XB5lN9" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="stylesheet" href="./css/doctor.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="bingo-card">
+          <h1 class="title">Baby's Bingo</h1>
+          <ul class="bingo-list"></ul>
+        </div>
+      </section>
+    </main>
+    <script src="./info.js"></script>
+    <script>
+      const bingo_index = [];
+      const use_number = 25;
+      function setIndex() {
+        const random = Math.floor(Math.random() * songs.length);
+        if (!bingo_index.includes(random)) {
+          bingo_index.push(random);
+        }
+        if (bingo_index.length < use_number - 1) {
+          setIndex();
+        }
+      }
+      $(document).ready(function () {
+        setIndex();
+        for (const index in bingo_index) {
+          if (index == Math.floor(use_number / 2)) {
+            const text = '<li class="bingo_item center active">★</li>';
+            $(".bingo-list").append(text);
+          }
+          const text =
+            '<li class="bingo_item target">' +
+            songs[bingo_index[index]] +
+            "</li>";
+          $(".bingo-list").append(text);
+        }
+
+        $(".target").click(function () {
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

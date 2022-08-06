@@ -1,0 +1,57 @@
+.bingo-card {
+  max-width: 600px;
+  min-width: 320px;
+  margin: auto;
+}
+.title {
+  text-align: center;
+  background-color: #ff1d03;
+  padding: 1em;
+  font-size: 1.5em;
+  color: #fff;
+}
+.bingo-list {
+  background-color: #ff1d03;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vw;
+  max-height: 600px;
+  min-height: 320px;
+  padding: 3px;
+}
+.bingo_item {
+  position: relative;
+  background-color: #fff;
+  width: 20%;
+  height: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: solid 3px #ff1d03;
+  font-weight: bold;
+  color: #ff1d03;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border: solid 10px #fef9e4;
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+.center {
+  font-size: 7em;
+}
+
+@media (max-width: 600px) {
+  .bingo_item {
+    font-size: 3vw;
+  }
+  .center {
+    font-size: 14vw;
+  }
+}
