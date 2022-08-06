@@ -33,6 +33,9 @@
   font-weight: bold;
   color: #ff1d03;
 }
+.bingo_item:nth-of-type(2n) {
+  background-color: #fad8da;
+}
 .active::after {
   content: "";
   position: absolute;
