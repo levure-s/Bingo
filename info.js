@@ -20,6 +20,7 @@ const songs = [
   "電話をしよう。",
   "Stella",
   "The Gleam Voice",
+  "Cheer Up!",
   "朝に昇る",
   "いつでも",
   "青瞬の音",
