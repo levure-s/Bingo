@@ -25,6 +25,7 @@ const songs = [
   "死にたい私にキスをして",
   "化粧水",
   "レモンレンセン",
+  "リバーブ",
   "The Gleam Voice",
   "Cheer Up!",
   "朝に昇る",
